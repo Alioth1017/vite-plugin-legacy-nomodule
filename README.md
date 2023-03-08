@@ -1,1 +1,1 @@
-# vite-plugin-legacy-nomodule
+# vite-plugin-legacy-patch

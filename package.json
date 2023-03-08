@@ -1,0 +1,52 @@
+{
+  "name": "vite-plugin-legacy-patch",
+  "version": "1.0.0",
+  "description": "",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "frontend",
+    "vite",
+    "vite-plugin",
+    "vite-plugin-legacy-patch"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild && pnpm run patch-cjs",
+    "patch-cjs": "tsx scripts/patchCJS.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alioth1017/vite-plugin-legacy-patch.git"
+  },
+  "author": "Alioth",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alioth1017/vite-plugin-legacy-patch/issues"
+  },
+  "homepage": "https://github.com/Alioth1017/vite-plugin-legacy-patch#readme",
+  "peerDependencies": {
+    "vite": "^4.0.0"
+  },
+  "devDependencies": {
+    "picocolors": "^1.0.0",
+    "tsx": "^3.12.3",
+    "unbuild": "^1.1.2",
+    "vite": "^4.0.0"
+  }
+}
